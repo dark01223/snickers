@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>array</title>
+	<style type="text/css">
+		body{
+			font-size: 25px;
+			font-family: fantasy;
+		}
+	</style>
+</head>
+<body>
+
+<p id="result"></p>
+<p id="primoElemento"></p>
+<p id="secondoElemento"></p>
+<p id="indice"></p>
+
+<script type="text/javascript">
+const listaSpesa = ["mele", "patate", "burro", "latte"];
+const lengthArray = listaSpesa.length
+document.getElementById("result").textContent = "l'array " + listaSpesa + " è lungo: " + lengthArray;
+document.getElementById("primoElemento").textContent = listaSpesa[0]
+document.getElementById("secondoElemento").textContent = listaSpesa[1]
+
+listaSpesa[0] = "formaggio"
+//console.log(listaSpesa)
+document.getElementById("indice").textContent = listaSpesa.indexOf("burro")
+
+//console.log(listaSpesa.indexOf("noci")) (risultato -1 pk non esistente.)
+listaSpesa.push("noci")
+listaSpesa.unshift("fragole")
+
+//listaSpesa.pop()
+const elementoRimosso = listaSpesa.pop()
+//console.log(listaSpesa)
+//console.log(elementoRimosso)
+// con push l'elemento verrà aggiunto alla fine, unshift all'inizio.
+// push unshift aggiunge
+// pop shift rimuove
+listaSpesa.shift()
+const index = listaSpesa.indexOf("burro")
+//splice toglie elementi a partire da "index" (1 pk ho messo 1)
+
+if(index !== -1){
+	listaSpesa.splice(index, 1)
+}
+
+//console.log(listaSpesa)
+
+//for (const item of listaSpesa) {
+//	console.log(item)
+//}
+
+const numbers = [5,2,7,6];
+
+function double(number) {
+		return number * 2;
+}
+const doubled = numbers.map(double)
+//console.log(doubled)
+
+const cities = ["londra", "strasburgo", "NY", "roma", "lussemburgo"];
+function isLong(city){
+	return city.length > 8;
+}
+
+const longer = cities.filter(isLong)
+//console.log(longer)
+
+const data = "londra, strasburgo, NY, roma";
+const nuovoArray = data.split(",")
+//console.log(nuovoArray.length -1) // index ultimo elemento
+//console.log(nuovoArray[nuovoArray.length -1]) //ultimo elemento
+
+const commaSeparated = nuovoArray.join(",")
+console.log(commaSeparated);
+</script>
+
+
+</body>
+</html>
